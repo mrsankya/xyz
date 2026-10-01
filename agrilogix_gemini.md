@@ -38,3 +38,8 @@
 - **Production URL:** [https://agrilogix.pages.dev/](https://agrilogix.pages.dev/)
 - **Latest Deployment:** [https://ebfa770b.agrilogix.pages.dev](https://ebfa770b.agrilogix.pages.dev)
 - **Routing Configuration:** Configured with `public/_redirects` for SPA fallback routing.
+
+## Git Repository
+- **Remote URL:** [https://github.com/mrsankya/xyz.git](https://github.com/mrsankya/xyz.git)
+- **Default Branch:** `main`
+
