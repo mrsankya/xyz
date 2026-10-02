@@ -82,7 +82,7 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
 
 @app.get("/health/live", tags=["health"])
 def live() -> dict[str, str]:
-    return {"status": "ok"}
+    return {"status": "ok", "version": "1ccad10"}
 
 
 @app.get("/health/ready", tags=["health"])
