@@ -41,6 +41,12 @@
 - **Deployment Status:** Successfully deployed & verified (HTTP 200 OK)
 - **Routing Configuration:** Configured with `public/_redirects` for SPA fallback routing.
 
+## Backend Deployment (Render)
+- **Runtime:** Python 3.12.8 (pinned via `.python-version` to prevent Python 3.14 wheel incompatibility)
+- **Dependencies:** Configured in `backend/requirements.txt` with `psycopg[binary]>=3.2` & `psycopg2-binary>=2.9.9`
+- **Database URL Auto-Normalization:** Configured in `config.py`, `database.py`, and `alembic` to convert Render's `postgres://` into `postgresql+psycopg://`
+- **Blueprint:** `render.yaml` created for automated deployment.
+
 ## Git Repository
 - **Remote URL:** [https://github.com/mrsankya/xyz.git](https://github.com/mrsankya/xyz.git)
 - **Default Branch:** `main`
