@@ -39,7 +39,17 @@ async def record_api_activity(request: Request, call_next):
         except Exception:
             user_id = None
 
-    response = await call_next(request)
+    try:
+        response = await call_next(request)
+    except Exception as exc:
+        import traceback
+        trace_str = traceback.format_exc()
+        print("MIDDLEWARE CAUGHT EXCEPTION:", trace_str)
+        return JSONResponse(
+            status_code=500,
+            content={"error": str(exc), "type": type(exc).__name__, "traceback": trace_str},
+        )
+
     if request.url.path.startswith("/api/"):
         forwarded = request.headers.get("x-forwarded-for")
         ip_address = forwarded.split(",")[0].strip() if forwarded else request.client.host if request.client else None
