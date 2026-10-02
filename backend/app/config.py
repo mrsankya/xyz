@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./agrilogix.db"
     jwt_secret_key: SecretStr
     jwt_access_token_minutes: int = 43200
-    cors_origins: str = "http://localhost:3000"
+    cors_origins: str = "http://localhost:3000,https://agrilogix.pages.dev,https://farmer-transport-pwey637rc-mittixperts.vercel.app"
     google_client_id: str = ""
     kyc_encryption_key: SecretStr = SecretStr("")
     kyc_storage_dir: str = ".private/kyc"

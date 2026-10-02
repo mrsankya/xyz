@@ -60,13 +60,14 @@ def registered_account_type(payload: RegisterRequest) -> str:
 
 
 def set_session_cookie(response: Response, user_id: str) -> None:
+    is_prod = settings.secure_cookies
     response.set_cookie(
         "access_token",
         create_access_token(user_id),
         max_age=settings.jwt_access_token_minutes * 60,
         httponly=True,
-        secure=settings.secure_cookies,
-        samesite="lax",
+        secure=is_prod,
+        samesite="none" if is_prod else "lax",
         path="/",
     )
 
