@@ -19,6 +19,15 @@ class Settings(BaseSettings):
     kyc_upload_max_bytes: int = 10 * 1024 * 1024
 
     @property
+    def normalized_database_url(self) -> str:
+        url = self.database_url
+        if url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql+psycopg://", 1)
+        elif url.startswith("postgresql://") and not (url.startswith("postgresql+psycopg://") or url.startswith("postgresql+psycopg2://")):
+            url = url.replace("postgresql://", "postgresql+psycopg://", 1)
+        return url
+
+    @property
     def allowed_origins(self) -> list[str]:
         return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 

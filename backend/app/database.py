@@ -12,12 +12,13 @@ class Base(DeclarativeBase):
 
 
 settings = get_settings()
-is_sqlite = settings.database_url.startswith("sqlite")
+db_url = settings.normalized_database_url
+is_sqlite = db_url.startswith("sqlite")
 engine = create_engine(
-    settings.database_url,
+    db_url,
     connect_args={"check_same_thread": False} if is_sqlite else {},
     pool_pre_ping=not is_sqlite,
-    poolclass=StaticPool if settings.database_url in {"sqlite://", "sqlite:///:memory:"} else None,
+    poolclass=StaticPool if db_url in {"sqlite://", "sqlite:///:memory:"} else None,
 )
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 
