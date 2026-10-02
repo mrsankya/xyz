@@ -48,7 +48,7 @@
    - Configured with regex CORS matching `r"^https://.*\.vercel\.app$"`
    - Cookie `SameSite="none"` and `Secure=True` enabled for cross-domain auth.
 
-## Git Repository
-- **Remote URL:** [https://github.com/mrsankya/xyz.git](https://github.com/mrsankya/xyz.git)
-- **Default Branch:** `main`
+## Git Repositories (Synchronized)
+1. **Primary Origin:** [https://github.com/mrsankya/xyz.git](https://github.com/mrsankya/xyz.git) (Branch: `main`)
+2. **FT Remote:** [https://github.com/pawarlalit601-dotcom/FT.git](https://github.com/pawarlalit601-dotcom/FT.git) (Branch: `main`)
 
