@@ -56,6 +56,20 @@ async def record_api_activity(request: Request, call_next):
     return response
 
 
+from fastapi.responses import JSONResponse
+import traceback
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception):
+    print("UNHANDLED EXCEPTION:", exc)
+    traceback.print_exc()
+    return JSONResponse(
+        status_code=500,
+        content={"detail": str(exc), "type": type(exc).__name__, "traceback": traceback.format_exc()},
+    )
+
+
 @app.get("/health/live", tags=["health"])
 def live() -> dict[str, str]:
     return {"status": "ok"}
