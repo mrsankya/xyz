@@ -10,7 +10,6 @@ from app.kyc_routes import router as kyc_router
 from app.routes import api, record_user_activity
 from app.security import decode_access_token
 from app.vehicle_routes import router as vehicle_availability_router
-from app.vehicle_routes import router as vehicle_availability_router
 
 
 settings = get_settings()
@@ -27,7 +26,6 @@ app.include_router(vehicle_availability_router)
 app.include_router(business_router)
 app.include_router(crop_market_router)
 app.include_router(kyc_router)
-app.include_router(vehicle_availability_router)
 
 
 @app.middleware("http")
