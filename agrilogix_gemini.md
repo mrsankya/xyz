@@ -39,13 +39,16 @@
 - **Latest Deployment:** [https://0d78f5be.agrilogix.pages.dev](https://0d78f5be.agrilogix.pages.dev)
 - **Deployed Build:** `frontend/dist` (Updated with Auth, KYC Verification, Business Dashboard, PWA & SPA routing)
 - **Deployment Status:** Successfully deployed & verified (HTTP 200 OK)
+- **Edge Reverse Proxy:** Cloudflare Pages Function (`frontend/functions/api/[[catchall]].js`) automatically proxies all `/api/*` requests directly to `https://agrilogix-api.onrender.com`.
 - **Routing Configuration:** Configured with `public/_redirects` for SPA fallback routing.
 
-## Backend Deployment (Render)
+## Backend Deployment (Render + Supabase)
+- **Live Backend URL:** [https://agrilogix-api.onrender.com](https://agrilogix-api.onrender.com)
+- **Database:** Supabase PostgreSQL (Connected & Migrated with Alembic)
 - **Runtime:** Python 3.12.8 (pinned via `.python-version` to prevent Python 3.14 wheel incompatibility)
 - **Dependencies:** Configured in `backend/requirements.txt` with `psycopg[binary]>=3.2` & `psycopg2-binary>=2.9.9`
-- **Database URL Auto-Normalization:** Configured in `config.py`, `database.py`, and `alembic` to convert Render's `postgres://` into `postgresql+psycopg://`
-- **Blueprint:** `render.yaml` created for automated deployment.
+- **Database URL Auto-Normalization:** Configured in `config.py`, `database.py`, and `alembic` to convert Render/Supabase `postgres://` into `postgresql+psycopg://`
+- **Full-Stack Status:** 100% Connected and operational (Login/Auth verified end-to-end).
 
 ## Git Repository
 - **Remote URL:** [https://github.com/mrsankya/xyz.git](https://github.com/mrsankya/xyz.git)
