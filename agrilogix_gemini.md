@@ -42,13 +42,11 @@
 - **Edge Reverse Proxy:** Cloudflare Pages Function (`frontend/functions/api/[[catchall]].js`) automatically proxies all `/api/*` requests directly to `https://agrilogix-api.onrender.com`.
 - **Routing Configuration:** Configured with `public/_redirects` for SPA fallback routing.
 
-## Backend Deployment (Render + Supabase)
-- **Live Backend URL:** [https://agrilogix-api.onrender.com](https://agrilogix-api.onrender.com)
-- **Database:** Supabase PostgreSQL (Connected & Migrated with Alembic)
-- **Runtime:** Python 3.12.8 (pinned via `.python-version` to prevent Python 3.14 wheel incompatibility)
-- **Dependencies:** Configured in `backend/requirements.txt` with `psycopg[binary]>=3.2` & `psycopg2-binary>=2.9.9`
-- **Database URL Auto-Normalization:** Configured in `config.py`, `database.py`, and `alembic` to convert Render/Supabase `postgres://` into `postgresql+psycopg://`
-- **Full-Stack Status:** 100% Connected and operational (Login/Auth verified end-to-end).
+## Connected Frontend Deployments
+1. **Cloudflare Pages:** [https://agrilogix.pages.dev](https://agrilogix.pages.dev) (Proxied via Cloudflare Pages Function)
+2. **Vercel Deployment:** [https://farmer-transport-pwey637rc-mittixperts.vercel.app](https://farmer-transport-pwey637rc-mittixperts.vercel.app)
+   - Configured with regex CORS matching `r"^https://.*\.vercel\.app$"`
+   - Cookie `SameSite="none"` and `Secure=True` enabled for cross-domain auth.
 
 ## Git Repository
 - **Remote URL:** [https://github.com/mrsankya/xyz.git](https://github.com/mrsankya/xyz.git)
