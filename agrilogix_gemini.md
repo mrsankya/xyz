@@ -36,7 +36,9 @@
 - **Platform:** Cloudflare Pages
 - **Project Name:** `agrilogix`
 - **Production URL:** [https://agrilogix.pages.dev/](https://agrilogix.pages.dev/)
-- **Latest Deployment:** [https://ebfa770b.agrilogix.pages.dev](https://ebfa770b.agrilogix.pages.dev)
+- **Latest Deployment:** [https://0d78f5be.agrilogix.pages.dev](https://0d78f5be.agrilogix.pages.dev)
+- **Deployed Build:** `frontend/dist` (Updated with Auth, KYC Verification, Business Dashboard, PWA & SPA routing)
+- **Deployment Status:** Successfully deployed & verified (HTTP 200 OK)
 - **Routing Configuration:** Configured with `public/_redirects` for SPA fallback routing.
 
 ## Git Repository
